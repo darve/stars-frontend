@@ -1,0 +1,43 @@
+
+/* 	Mobile styles
+/* ======================================= */
+
+h1 {
+    font-size: 17px;
+    line-height: 24px;
+    margin: 0 0 24px 0;
+
+    .big {
+        display: block;
+        font-size: 28px;
+        padding: 0 0 7px 0;
+    }
+}
+
+.view-top {
+    .section.home-top {
+        padding-right: 32px;
+        padding-left: 32px;
+    }
+}
+
+.decorate-top {
+    // textarea {
+    //     padding: 0 60px;
+    // }
+}
+
+.star-top .star-message {
+    padding: 0 50px;
+}
+
+.thank-you-top {
+
+    // .restart {
+    //     margin-bottom: 210px;
+    // }
+
+    .star-message {
+        top: 565px;
+    }
+}

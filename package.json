@@ -1,0 +1,58 @@
+{
+  "name": "Wagamama",
+  "version": "0.0.1",
+  "description": "Christmas campaign site for Wagamamas",
+  "repository": "https://github.com/darve/stars.git",
+  "author": "David Woollard <dave@darve.co.uk>",
+  "main": "app.js",
+  "browser": {
+    "jquery": "./src/vendor/jquery-v1.10.2.min.js",
+    "pixi": "./src/vendor/pixi.min.js",
+    "tween": "./src/vendor/tween.js",
+    "mobile-detect": "./src/vendor/mobile-detect.js",
+    "satnav": "./src/vendor/satnav.js",
+    "es5-shim": "./src/vendor/es5-shim.js",
+    "placeholder-shim": "./src/vendor/jquery.html5-placeholder-shim.js"
+  },
+  "dependencies": {
+    "express": "~4.13.3"
+  },
+  "scripts": {
+    "start": "node app.js && gulp watch",
+    "test": "tape tests/tape/**/*.js | tap-bail | tap-difflet",
+    "illustrator": "osascript src/illustrator/illustrator.scpt `pwd` /src/scripts/generated/illustrator-output.js && gulp scripts"
+  },
+  "devDependencies": {
+    "browserify": "~11.2.0",
+    "del": "^2.0.2",
+    "es6-promise": "~3.0.2",
+    "gulp": "~3.9.0",
+    "gulp-autoprefixer": "~3.0.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-define-module": "^0.1.4",
+    "gulp-filesize": "0.0.6",
+    "gulp-if": "^2.0.0",
+    "gulp-jshint": "~1.11.2",
+    "gulp-minify-css": "~1.2.1",
+    "gulp-processhtml": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "~2.0.4",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "~1.6.0",
+    "gulp-tape": "0.0.4",
+    "gulp-template-compile": "^1.1.0",
+    "gulp-uglify": "~1.4.1",
+    "gulp-util": "~3.0.6",
+    "jsonfile": "^2.2.3",
+    "lodash": "^3.10.1",
+    "q": "^1.4.1",
+    "tap-bail": "0.0.0",
+    "tap-colorize": "~1.2.0",
+    "tap-difflet": "~0.4.0",
+    "tape": "~4.2.1",
+    "underscore": "^1.8.3",
+    "vinyl-buffer": "~1.0.0",
+    "vinyl-source-stream": "~1.1.0",
+    "yargs": "^3.27.0"
+  }
+}

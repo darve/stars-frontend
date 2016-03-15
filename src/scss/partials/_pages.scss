@@ -1,0 +1,185 @@
+
+/**
+ * Decorate page
+ */
+.decorate-top {
+
+    .view-top & {
+        padding: 200px 0 0;
+    }
+
+    h2 {
+        margin: 0 0 160px 0;
+    }
+
+    &.color-red,
+    &.color-grey {
+        ::-webkit-input-placeholder {
+            color: white;
+        }
+        ::-moz-placeholder {
+            color: white;
+        }
+        :-ms-input-placeholder {
+            color: white;
+        }
+        textarea:-moz-placeholder {
+            color: white;
+        }
+        textarea {
+            color: white;
+        }
+        label {
+            text-align: center !important;
+            color: white !important;
+        }
+    }
+
+    &.color-white {
+     ::-webkit-input-placeholder {
+            color: $body-grey;
+        }
+        ::-moz-placeholder {
+            color: $body-grey;
+        }
+        :-ms-input-placeholder {
+            color: $body-grey;
+        }
+        textarea:-moz-placeholder {
+            color: $body-grey;
+        }
+        textarea {
+            color: $body-grey;
+        }
+        label {
+            text-align: center !important;
+            color: $body-grey !important;
+        }
+    }
+
+    textarea {
+        background: transparent;
+        border: none;
+        outline: none;
+        text-align: center;
+        // padding: 0 90px;
+        margin: 0 auto 190px auto;
+        overflow: hidden;
+        width: 180px;
+        word-wrap: break-word;
+
+        &:focus::-webkit-input-placeholder { color: transparent; }
+                  &:focus:-moz-placeholder { color: transparent; }
+                 &:focus::-moz-placeholder { color: transparent; }
+             &:focus:-ms-input-placeholder { color: transparent; }
+    }
+
+    .g-recaptcha div {
+        display: block;
+        margin: 0 auto 24px auto;
+    }
+}
+
+/**
+ * Star page
+ */
+.star-top {
+
+    h2 {
+        margin: 0 0 140px 0;
+    }
+
+    &.color-red .star-message,
+    &.color-grey .star-message {
+        color: white;
+    }
+
+    &.color-white .star-message {
+        color: $body-grey;
+    }
+
+    .star-message {
+        min-height: 280px;
+        padding: 0 90px;
+        word-wrap: break-word;
+    }
+}
+
+.terms-top {
+    background-color: $bg-grey;
+
+    .inner {
+        max-width: none;
+        text-align: left;
+    }
+
+    p:last-child {
+        padding-bottom: 40px;
+        margin: 0;
+    }
+}
+
+
+/**
+ * Competition closed page
+ */
+
+.competition-closed-page {
+    background: $bg-grey;
+
+    .view-top {
+        min-height: 400px;
+    }
+
+    .view.faded {
+        display: none;
+    }
+
+    .closed {
+        background-color: $bg-grey;
+        padding-bottom: 40px;
+    }
+
+    .thank-you {
+        background-color: $bg-grey;
+    }
+}
+
+.competition-closed-page {
+    iframe {
+        position: absolute;
+        left: -21px;
+    }
+}
+
+.thank-you-top {
+    .restart {
+        // margin-bottom: 220px;
+    }
+
+    .star-message {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: 555px;
+        width: 144px;
+        opacity: 1;
+        margin: 0 auto;
+        transition: all .2s ease-out;
+        transform: translate(0, 0);
+
+        &.faded {
+            opacity: 0;
+            transform: translate(0, 10);
+        }
+
+            &.color-red,
+            &.color-grey {
+                color: white;
+            }
+
+            &.color-white {
+                color: $body-grey;
+            }
+    }
+}

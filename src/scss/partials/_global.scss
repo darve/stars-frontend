@@ -1,0 +1,404 @@
+
+/* 	Global styles
+/* ======================================= */
+
+* {
+	box-sizing: border-box;
+}
+
+a, input {
+    outline: none;
+    border: none;
+}
+
+body, html {
+	position: relative;
+	width: 100%;
+	font-family: 'wagamamanormal', sans-serif;
+    background: white;
+    color: $body-grey;
+    text-transform: lowercase;
+	margin: 0;
+	padding: 0;
+    // overflow-x: hidden;
+    transition: background .2s ease-out;
+
+    &.loaded {
+        // background: white;
+    }
+
+    &.error {
+        background: $bg-grey;
+    }
+}
+
+canvas {
+    display: block;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+    background: $bg-grey;
+
+    &.nocursor {
+        cursor: none;
+    }
+}
+
+.canvas-bg {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 810px;
+    background: $bg-grey;
+    z-index: 0;
+}
+
+.site-loader {
+    width: 32px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: 60;
+    transition: all .4s ease-out;
+    pointer-events: none;
+    opacity: 0;
+
+    &.loading {
+        opacity: 1;
+    }
+}
+
+.section {
+    position: relative;
+    z-index: 10;
+    display: block;
+    text-align: center;
+}
+
+.inner {
+    display: block;
+    margin: 0 auto;
+    max-width: 320px;
+}
+
+.view {
+    transition: all .4s ease-out;
+    opacity: 1;
+    display: block;
+    position: relative;
+    transform: translate(0px, 0px);
+    z-index: 30;
+
+    &.loading, &.faded {
+        opacity: 0;
+        pointer-events: none;
+    }
+}
+
+.view-top.loading,
+.view-top.faded,
+.view-bottom.loading,
+.view-bottom-faded {
+    transform: translate(0px, 16px);
+}
+
+.view-top {
+    min-height: 722px;
+
+    &.shrink {
+        min-height: 0px;
+    }
+
+    .section {
+        padding: 100px 50px 0;
+    }
+}
+
+.view-bottom {
+    display: block;
+    position: relative;
+    width: 100%;
+    left: 0;
+    right: 0;
+    margin: auto;
+    overflow: hidden;
+
+    .section {
+        padding: 22px 0;
+    }
+}
+
+.view-orientation {
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: $bg-grey;
+    z-index: 9999;
+
+    &.show {
+        display: block;
+    }
+
+    img {
+        display: block;
+        position: absolute;
+        width: 300px;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+.section.dark {
+    background: $body-grey;
+    color: white;
+}
+
+/**
+ * Modal pop-up styling
+ */
+.view-modal-bg {
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    background: rgba(109,109,107,0.6);
+    pointer-events: none;
+    opacity: 0;
+    transition: all .3s ease-out;
+
+    &.show {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+        cursor: pointer;
+    }
+}
+
+.view-modal {
+    display: none;
+    position: fixed;
+    width: 100%;
+    max-width: 460px;
+    left: 50%;
+    top: 50%;
+    z-index: 101;
+    padding: 32px;
+    pointer-events: none;
+    opacity: 0;
+    transform: translate( -50%, -50% );
+    transition: all .3s ease-out;
+
+    &.show {
+        display: block;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .section {
+        display: block;
+        background: white;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.5);
+        padding: 40px 22px;
+    }
+
+    h2, p {
+        margin: 0 0 44px 0;
+    }
+}
+
+/**
+ * Page elements
+ */
+.branding {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 16px;
+    width: 180px;
+    height: 68px;
+    margin: 0 auto;
+    background: url('/static_assets/img/wagamama-logo-800.png') center center no-repeat;
+    background-size: 100%;
+    z-index: 31;
+}
+
+.btn {
+    margin: 0 auto 24px;
+    width: 100%;
+    max-width: 260px;
+    display: block;
+    position: relative;
+    background: transparent;
+    padding: 17px;
+    text-decoration: none;
+    font-size: 24px;
+    transition: all .2s ease-out;
+    cursor: pointer;
+    color: $body-grey;
+    border: 1px solid $body-grey;
+    background: rgba(255,255,255, 0.2);
+
+    &:hover, &:focus, &:active {
+        background: $star-red;
+        border-color: $star-red;
+        color: white;
+    }
+
+    .dark & {
+        color: white;
+        border: 1px solid white;
+        margin: 0 auto 10px auto;
+
+        &:hover, &:focus, &:active {
+            background: $star-red;
+            border-color: $star-red;
+            color: white;
+        }
+    }
+}
+
+.btn-progress {
+    padding: 0;
+
+    .loader, .text {
+        transition: opacity .2s ease-out;
+    }
+
+    .loader {
+        display: block;
+        width: 32px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+    }
+
+    .text {
+        opacity: 1;
+        display: block;
+        padding: 17px;
+    }
+
+    &.loading {
+        background: $star-red;
+        border: 1px solid $star-red;
+
+        .loader {
+            opacity: 1;
+        }
+
+        .text {
+            opacity: 0;
+        }
+    }
+}
+
+footer {
+    display: block;
+    background: white;
+    color: $body-grey;
+
+    ul {
+        display: block;
+        margin: 0;
+        padding: 8px 0;
+    }
+
+    li {
+        display: block;
+        font-size: 15px;
+        line-height: 22px;
+        margin: 0;
+        padding: 8px 0;
+    }
+
+    a {
+        text-decoration: none;
+    }
+}
+
+.terms-close-button {
+    background-color: #000;
+    cursor: pointer;
+    left: 0;
+    padding: 18px 0;
+    position: absolute;
+    top: 0px;
+    width: 55px;
+    z-index: 1000;
+    transition: all 0.4s ease-out;
+
+    &.faded {
+        top: -100px;
+    }
+}
+.terms-close-button .nav-icon {
+    display: block;
+    height: 20px;
+    margin: 0 auto;
+    position: relative;
+    transform: rotate(0deg);
+    transition: all 0.5s ease-in-out 0s;
+    width: 26px;
+}
+.terms-close-button.show .nav-icon span:nth-child(1) {
+    left: 50%;
+    top: 8px;
+    width: 0;
+}
+.terms-close-button .nav-icon span:nth-child(1) {
+    top: 0;
+}
+.terms-close-button .nav-icon span {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 9px;
+    display: block;
+    height: 4px;
+    left: 0;
+    opacity: 1;
+    position: absolute;
+    transform: rotate(0deg);
+    transition: all 0.25s ease-in-out 0s;
+    width: 100%;
+}
+
+.terms-close-button.show .nav-icon span:nth-child(2) {
+    transform: rotate(45deg);
+}
+.terms-close-button .nav-icon span:nth-child(2), .nav-icon span:nth-child(3) {
+    top: 8px;
+}
+.terms-close-button.show .nav-icon span:nth-child(3) {
+    transform: rotate(-45deg);
+}
+.terms-close-button .nav-icon span:nth-child(2), .nav-icon span:nth-child(3) {
+    top: 8px;
+}
+.terms-close-button.show .nav-icon span:nth-child(4) {
+    left: 50%;
+    top: 8px;
+    width: 0;
+}

@@ -1,0 +1,62 @@
+{
+	"IcoMoonType": "selection",
+	"icons": [
+		{
+			"icon": {
+				"paths": [
+					"M672 192c-88.366 0-160 71.634-160 160v96h-128v128h128v448h128v-448h144l32-128h-176v-96c0-17.672 14.326-32 32-32h160v-128h-160z"
+				],
+				"attrs": [],
+				"tags": [
+					"facebook",
+					"brand",
+					"social"
+				],
+				"grid": 16
+			},
+			"attrs": [],
+			"properties": {
+				"id": 1297,
+				"order": 9,
+				"prevSize": 32,
+				"ligatures": "facebook, brand6",
+				"name": "facebook",
+				"code": 59648
+			},
+			"setIdx": 0,
+			"setId": 0,
+			"iconIdx": 396
+		}
+	],
+	"height": 1024,
+	"metadata": {
+		"name": "icomoon"
+	},
+	"preferences": {
+		"showGlyphs": true,
+		"showQuickUse": true,
+		"showQuickUse2": true,
+		"showSVGs": true,
+		"fontPref": {
+			"prefix": "icon-",
+			"metadata": {
+				"fontFamily": "icomoon"
+			},
+			"metrics": {
+				"emSize": 1024,
+				"baseline": 6.25,
+				"whitespace": 50
+			},
+			"embed": false
+		},
+		"imagePref": {
+			"prefix": "icon-",
+			"png": true,
+			"useClassSelector": true,
+			"color": 4473924,
+			"bgColor": 16777215
+		},
+		"historySize": 100,
+		"showCodes": false
+	}
+}

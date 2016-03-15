@@ -1,0 +1,102 @@
+
+/*  Form styling
+/* ======================================= */
+
+input {
+    -webkit-appearance: none;
+    border-radius: 0px;
+}
+
+input[type=text], input[type=email], input[type=phone], select, textarea {
+	font-family: 'wagamamanormal', sans-serif;
+	text-transform: lowercase;
+	outline: none;
+	padding: 10px 12px;
+	width: 100%;
+	font-size: 15px;
+	line-height: 22px;
+	border: none;
+	border-radius: 0px;
+    background: white;
+    border: 1px solid white;
+    transition: border .25s ease-out;
+
+	&.margin-bottom {
+		margin-bottom: 20px;
+	}
+}
+
+textarea {
+	height: 130px;
+	resize: none;
+}
+
+input[type=checkbox] {
+	margin: 0 0 0 0;
+}
+
+form .row {
+	display: block;
+	position: relative;
+	margin: 0 auto 24px auto;
+	max-width: 260px;
+    transition: margin .25s ease-out;
+
+	&.full-width {
+		width: 100%;
+	}
+
+	&.half-width {
+		display: inline-block;
+		width: 47%;
+
+		&.left {
+			margin-right: 6%;
+		}
+	}
+
+	label {
+		display: block;
+		font-size: 15px;
+		padding: 0 0 3px 0;
+
+		&.inline-block {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+	input {
+		display: block;
+
+		&.inline-block {
+			display: inline-block;
+			vertical-align: top;
+		}
+	}
+
+	span.error {
+        display: block;
+        opacity: 0;
+		max-height: 0px;
+        text-align: left;
+        font-size: 13px;
+        color: $star-red;
+        padding: 0px 13px;
+        transition: all .25s ease-out;
+	}
+
+	&.error {
+        margin: 0 auto 8px auto;
+
+        input[type=text], input[type=email] {
+            border: 1px solid $star-red;
+        }
+
+		span.error {
+            opacity: 1;
+            max-height: 100px;
+            padding: 10px 13px;
+		}
+	}
+}
